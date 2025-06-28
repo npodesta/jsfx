@@ -1,0 +1,10 @@
+desc:Oscilador Senoidal
+slider1:freq=440<20,5000,250>Frequência (Hz)
+@init
+two_pi = 2*$pi;
+pos = 0;
+rate = srate;
+@sample
+seno = sin(pos);
+spl0 = spl1 = seno;
+pos += two_pi * freq / rate;
